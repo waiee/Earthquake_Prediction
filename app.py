@@ -7,6 +7,7 @@ import seaborn as sns
 import pydeck as pdk
 import folium as folium
 import streamlit as st
+from sklearn.cluster import KMeans
 from PIL import Image
 from streamlit_option_menu import option_menu
 
@@ -23,6 +24,11 @@ def home():
     df = pd.read_csv(
         'earthquakes_2023_global.csv',
         usecols=range(1, 18),  # Assuming you want columns B to R (0-indexed)
+        nrows=1000,
+    )
+
+    newdf_norm = pd.read_csv(
+        'newdf_norm.csv',
         nrows=1000,
     )
 
@@ -75,13 +81,35 @@ def home():
     # ----- K-Means----- #
     st.header("K-Means Clustering")
     st.subheader("Elbow Method")
-    image4 = Image.open("images/elbow.png").resize((600, 400))  # Adjust size as needed
-    st.image(image4, caption="Elbow Plot")
-    st.write(
-        """
-        bla bla bla
-        """
+    # image4 = Image.open("images/elbow.png").resize((600, 400))  # Adjust size as needed
+    # st.image(image4, caption="Elbow Plot")
+    # st.write(
+    #     """
+    #     bla bla bla
+    #     """
+    # )
+
+    max_k = 20
+    ssd = []
+    for i in range(1, max_k+1):
+        km_elbow = KMeans(
+        n_clusters=i, init='random',
+        n_init=10, max_iter=300,
+        tol=1e-04, random_state=0
     )
+    km_elbow.fit(newdf_norm)
+    ssd.append(km_elbow.inertia_) # Sum of squared distances of samples to their closest cluster center
+
+    # Plot
+    fig, ax = plt.subplots()
+    ax.plot(range(1, max_k+1), ssd, marker='o')
+    ax.set_xticks(range(1, max_k+1))
+    ax.set_xlabel('Number of clusters')
+    ax.set_ylabel('SSD')
+
+    # Display the plot in Streamlit
+    st.pyplot(fig)
+
 
     st.subheader("K-Means")
     image5 = Image.open("images/kmeansscatter.png").resize((600, 400))  # Adjust size as needed
@@ -92,6 +120,22 @@ def home():
         """
     )
     st.subheader("Silhouette Method")
+    image6 = Image.open("images/silhouette.png").resize((600, 400))  # Adjust size as needed
+    st.image(image6, caption="Silhouette Score")
+    st.write(
+        """
+        bla bla bla
+        """
+    )
+
+    st.subheader("Basemap")
+    image7 = Image.open("images/basemap.png").resize((700, 400))  # Adjust size as needed
+    st.image(image7, caption="Basemap")
+    st.write(
+        """
+        bla bla bla
+        """
+    )
 
 def about():
     dp_image = Image.open("image/removebgWaiee.png")
