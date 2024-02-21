@@ -45,11 +45,19 @@ def home():
     # ----- Data Preprocessing ----- #
     st.header("Data Preprocessing")
     st.subheader("Handle missing & null values")
+    image1 = Image.open("image/multivariate.png")
+
     st.write(
         """
-        
+        First figure represents Comparison of Mean Magnitudes of k=2.. Based on the graph, we can observe that cluster label 1 has slightly higher mean magnitude (5.461928395135152) compared to label 0 (5.453090283336001). Moreover, second figure represents Comparison of Mean Depth of k=2. 
+        Based on the graph, we can observe that cluster label 1 has higher mean depth (72.87603063277942) compared to label 0 (56.677855162478004).
+        Based on the result, we can observe that cluster label 1 has higher mean magnitude and mean depth. Thus, we can conclude that cluster label 1 has higher risk of earthquake occurrences compared to label 0.
         """
     )
+    
+    
+    
+    
     st.subheader("Data Normalization")
     st.write(
         """
