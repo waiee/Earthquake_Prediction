@@ -154,7 +154,8 @@ def home():
 
     st.write(
         """
-        We have plotted the basemap using coordinates from latitude, and longitude.
+        We have plotted the basemap using coordinates from latitude, and longitude corresponding to their labels.
+        Based on the map, we can observe that there are two obvious groups of earthquake occurences locations that are clustered by K-Means.
         """
     )
 
@@ -176,7 +177,9 @@ def home():
 
     st.write(
         """
-        bla bla bla
+        To handle imbalance the cluster label, we have applied a oversampling technique called SMOTE.
+        SMOTE is suitable for numerical variables and uses KNN to find nearest neighbor, therefore we already normalized the dataset beforehand.
+        Both figures above illustrate the before and after SMOTE technique applied.
         """
     )
 
@@ -184,6 +187,11 @@ def home():
     st.subheader("Chi-Squared Test")
     image10 = Image.open("images/kbest.png").resize((1000, 700))  # Adjust size as needed
     st.image(image10, caption="Feature Selection using Chi-Squared Test")
+    st.write(
+        """
+        In data reduction, we have applied Chi-squared Test to select best features.
+        """
+    )
 
 def pred():
     st.header("Prediction Models")
