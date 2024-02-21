@@ -26,6 +26,10 @@ def home():
         nrows=1000,
     )
 
+    st.header("Dataset")
+    st.write("For this clustering analysis, we will be using  “earthquake_2023_global.csv” as our main dataset.")
+    st.dataframe(df)
+
 def about():
     dp_image = Image.open("image/removebgWaiee.png")
     image_column, right_column = st.columns((1,2))
