@@ -8,6 +8,8 @@ import pydeck as pdk
 import folium as folium
 import streamlit as st
 from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+from yellowbrick.cluster import silhouette_visualizer
 from PIL import Image
 from streamlit_option_menu import option_menu
 
@@ -29,6 +31,9 @@ def home():
     
     newdf_norm = pd.read_csv('datasets/newdf_norm.csv')
     df_clustered = pd.read_csv('datasets/df_clustered.csv')
+    df_base = pd.read_csv('datasets/df_base.csv', 
+                    usecols=['latitude', 'longitude', 'mag'])
+    df_base.columns = ['latitude', 'longitude', 'mag']
 
     # ----- Dataset ----- #
     st.header("Dataset")
@@ -139,8 +144,14 @@ def home():
     )
 
     st.subheader("Basemap")
-    image7 = Image.open("images/basemap.png").resize((700, 400))  # Adjust size as needed
-    st.image(image7, caption="Basemap")
+    # image7 = Image.open("images/basemap.png").resize((700, 400))  # Adjust size as needed
+    # st.image(image7, caption="Basemap")
+
+    df2 = pd.read_csv('Significant_Earthquakes.csv', 
+                    usecols=['latitude', 'longitude', 'mag'])
+    df2.columns = ['latitude', 'longitude', 'mag']
+    st.map(df2)
+
     st.write(
         """
         bla bla bla
