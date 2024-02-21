@@ -18,7 +18,7 @@ def home():
     import streamlit as st
      # ----- HEADER AND OBJECTIVES ----- #
     st.markdown("")
-    st.text("Prepared by Waiee Zainol")
+    st.text("Prepared by Group 17")
     
     df = pd.read_csv(
         'earthquakes_2023_global.csv',
