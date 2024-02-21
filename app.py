@@ -182,7 +182,7 @@ def pred():
     st.header("Prediction Models")
 
 def about():
-    dp_image = Image.open("image/removebgWaiee.png")
+    dp_image = Image.open("images/removebgWaiee.png")
     image_column, right_column = st.columns((1,2))
     with image_column:
         st.image(dp_image, caption="")
@@ -217,4 +217,5 @@ elif selected == "Prediction Models":
     pred()
 
 elif selected == "About":
+    st.title("About :computer:")
     about()
