@@ -46,7 +46,7 @@ def home():
     st.header("Data Preprocessing")
     st.subheader("Handle missing & null values")
     image1 = Image.open("images/multivariate.png")
-    st.image(image1, caption="Mutltivariate Imputation")
+    st.image(image1, caption="Multivariate Imputation")
 
     st.write(
         """
@@ -55,15 +55,43 @@ def home():
     )
 
     st.subheader("Data Normalization")
+    image2 = Image.open("images/minmax1.png").resize((600, 300))  # Adjust size as needed
+    image3 = Image.open("images/minmax2.png").resize((600, 300))  # Adjust size as needed
+
+    # Display the images side by side
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image(image2, caption="Before")
+
+    with col2:
+        st.image(image3, caption="After")
+
     st.write(
         """
-
+        bla bla bla
         """
     )
 
+    # ----- K-Means----- #
+    st.header("K-Means Clustering")
+    st.subheader("Elbow Method")
+    image4 = Image.open("images/elbow.png").resize((600, 400))  # Adjust size as needed
+    st.image(image4, caption="Elbow Plot")
+    st.write(
+        """
+        bla bla bla
+        """
+    )
 
-
-
+    st.subheader("K-Means")
+    image5 = Image.open("images/kmeansscatter.png").resize((600, 400))  # Adjust size as needed
+    st.image(image5, caption="K-Means")
+    st.write(
+        """
+        bla bla bla
+        """
+    )
+    st.subheader("Silhouette Method")
 
 def about():
     dp_image = Image.open("image/removebgWaiee.png")
