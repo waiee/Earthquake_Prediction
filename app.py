@@ -151,6 +151,11 @@ def home():
         """
     )
 
+    # ----- Data Post-processing----- #
+    st.header("Data Post-processing")
+    st.subheader("Sampling")
+    st.subheader("Chi-Squared Test")
+
 def about():
     dp_image = Image.open("image/removebgWaiee.png")
     image_column, right_column = st.columns((1,2))
