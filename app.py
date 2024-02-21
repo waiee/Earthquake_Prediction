@@ -14,10 +14,6 @@ st.set_page_config(page_title="Earthquake Clustering Analysis",
                    page_icon=":bar_chart:",
                    layout="wide")
 
-#Header
-st.subheader("test test")
-st.title("yes mf")
-
 def home():
     import streamlit as st
      # ----- HEADER AND OBJECTIVES ----- #
@@ -25,7 +21,7 @@ def home():
     st.text("Prepared by Waiee Zainol")
     
     df = pd.read_csv(
-        'earthquake_2023_global.csv',
+        'earthquakes_2023_global.csv',
         usecols=range(1, 18),  # Assuming you want columns B to R (0-indexed)
         nrows=1000,
     )
