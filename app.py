@@ -154,7 +154,7 @@ def home():
 
     st.write(
         """
-        bla bla bla
+        We have plotted the basemap using coordinates from latitude, and longitude.
         """
     )
 
