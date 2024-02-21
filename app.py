@@ -74,7 +74,7 @@ def home():
 
     st.write(
         """
-        bla bla bla
+        We normalize the attributes to make sure the 
         """
     )
 
