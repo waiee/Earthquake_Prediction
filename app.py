@@ -189,7 +189,7 @@ def home():
     st.image(image10, caption="Feature Selection using Chi-Squared Test")
     st.write(
         """
-        In data reduction, we have applied Chi-squared Test to select best features.
+        In data reduction, we have applied Chi-squared Test to select best features. 
         """
     )
 
