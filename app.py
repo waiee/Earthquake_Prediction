@@ -16,7 +16,7 @@ st.set_page_config(page_title="Earthquake Clustering Analysis",
 
 def home():
     import streamlit as st
-     # ----- HEADER AND OBJECTIVES ----- #
+     # ----- HEADER ----- #
     st.markdown("")
     st.text("Prepared by Group 17")
     
@@ -26,10 +26,12 @@ def home():
         nrows=1000,
     )
 
+    # ----- Dataset ----- #
     st.header("Dataset")
     st.write("For this clustering analysis, we will be using  “earthquake_2023_global.csv” as our main dataset.")
     st.dataframe(df)
 
+    # ----- Objectives ----- #
     st.header("Objectives")
     st.write(
         """ 
@@ -39,6 +41,8 @@ def home():
 
         """
     )
+
+    
 
 
 
