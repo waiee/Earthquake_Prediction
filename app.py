@@ -30,6 +30,18 @@ def home():
     st.write("For this clustering analysis, we will be using  “earthquake_2023_global.csv” as our main dataset.")
     st.dataframe(df)
 
+    st.header("Objectives")
+    st.write(
+        """ 
+        1. To leverage clustering techniques, specifically K-means clustering to identify high-risk regions prone to earthquakes.
+        2. To develop prediction models utilising conventional machine learning methods to forecast magnitudes based on the identified high-risk regions. 
+        3. To evaluate and compare the performance of the developed prediction models using appropriate evaluation metrics.
+
+        """
+    )
+
+
+
 def about():
     dp_image = Image.open("image/removebgWaiee.png")
     image_column, right_column = st.columns((1,2))
