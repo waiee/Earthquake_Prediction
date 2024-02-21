@@ -45,8 +45,8 @@ def home():
     # ----- Data Preprocessing ----- #
     st.header("Data Preprocessing")
     st.write(
-        """ 
-
+        """
+        
         """
     )
 
