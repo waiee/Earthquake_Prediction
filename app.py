@@ -44,9 +44,16 @@ def home():
 
     # ----- Data Preprocessing ----- #
     st.header("Data Preprocessing")
+    st.subheader("Handle missing & null values")
     st.write(
         """
         
+        """
+    )
+    st.subheader("Data Normalization")
+    st.write(
+        """
+
         """
     )
 
