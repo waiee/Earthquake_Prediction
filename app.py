@@ -22,24 +22,13 @@ def home():
     st.text("Prepared by Group 17")
     
     df = pd.read_csv(
-        'datasets/earthquakes_2023_global.csv',
+        'earthquakes_2023_global.csv',
         usecols=range(1, 18),  # Assuming you want columns B to R (0-indexed)
         nrows=1000,
     )
-
+    
     newdf_norm = pd.read_csv('datasets/newdf_norm.csv')
-    # Perform K-means clustering and calculate SSD
-    max_k = 20
-    ssd = []
-    for i in range(1, max_k + 1):
-        km_elbow = KMeans(
-            n_clusters=i, init='random',
-            n_init=10, max_iter=300,
-            tol=1e-04, random_state=0
-        )
-        km_elbow.fit(newdf_norm)
-        ssd.append(km_elbow.inertia_)  # Sum of squared distances of samples to their closest cluster center
-
+    df_clustered = pd.read_csv('datasets/df_clustered.csv')
 
     # ----- Dataset ----- #
     st.header("Dataset")
@@ -89,9 +78,22 @@ def home():
 
     # ----- K-Means----- #
     st.header("K-Means Clustering")
+
+    #Elbow Methods
     st.subheader("Elbow Method")
     # image4 = Image.open("images/elbow.png").resize((600, 400))  # Adjust size as needed
     # st.image(image4, caption="Elbow Plot")
+
+    max_k = 20
+    ssd = []
+    for i in range(1, max_k + 1):
+        km_elbow = KMeans(
+            n_clusters=i, init='random',
+            n_init=10, max_iter=300,
+            tol=1e-04, random_state=0
+        )
+        km_elbow.fit(newdf_norm)
+        ssd.append(km_elbow.inertia_)  # Sum of squared distances of samples to their closest cluster center
 
     # Display the scatter elbow plot
     fig, ax = plt.subplots(figsize=(7, 3))  # Adjust size as needed
@@ -109,14 +111,24 @@ def home():
         """
     )
 
+    #K-Means
     st.subheader("K-Means")
-    image5 = Image.open("images/kmeansscatter.png").resize((600, 400))  # Adjust size as needed
-    st.image(image5, caption="K-Means")
+    # image5 = Image.open("images/kmeansscatter.png").resize((600, 400))  # Adjust size as needed
+    # st.image(image5, caption="K-Means")
+
+    plt.figure(figsize=(7, 3))  # Adjust size as needed
+    sns.scatterplot(x="latitude", y="longitude", hue="label", data=df_clustered)
+    plt.title('K-Means Clustering')
+    # Display the plot in Streamlit
+    st.pyplot(plt)
+
     st.write(
         """
         bla bla bla
         """
     )
+
+    #Silhouette Score
     st.subheader("Silhouette Method")
     image6 = Image.open("images/silhouette.png").resize((600, 400))  # Adjust size as needed
     st.image(image6, caption="Silhouette Score")
