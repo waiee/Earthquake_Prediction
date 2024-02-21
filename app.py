@@ -31,9 +31,6 @@ def home():
     
     newdf_norm = pd.read_csv('datasets/newdf_norm.csv')
     df_clustered = pd.read_csv('datasets/df_clustered.csv')
-    df_base = pd.read_csv('datasets/df_base.csv', 
-                    usecols=['latitude', 'longitude', 'mag'])
-    df_base.columns = ['latitude', 'longitude', 'mag']
 
     # ----- Dataset ----- #
     st.header("Dataset")
@@ -135,7 +132,7 @@ def home():
 
     #Silhouette Score
     st.subheader("Silhouette Method")
-    image6 = Image.open("images/silhouette.png").resize((600, 400))  # Adjust size as needed
+    image6 = Image.open("images/silhouette.png").resize((700, 400))  # Adjust size as needed
     st.image(image6, caption="Silhouette Score")
     st.write(
         """
@@ -143,14 +140,10 @@ def home():
         """
     )
 
+    #Basemap
     st.subheader("Basemap")
-    # image7 = Image.open("images/basemap.png").resize((700, 400))  # Adjust size as needed
-    # st.image(image7, caption="Basemap")
-
-    df2 = pd.read_csv('Significant_Earthquakes.csv', 
-                    usecols=['latitude', 'longitude', 'mag'])
-    df2.columns = ['latitude', 'longitude', 'mag']
-    st.map(df2)
+    image7 = Image.open("images/basemap.png").resize((700, 400))  # Adjust size as needed
+    st.image(image7, caption="Basemap")
 
     st.write(
         """
