@@ -190,6 +190,8 @@ def home():
     st.write(
         """
         In data reduction, we have applied Chi-squared Test to select best features. 
+        We have decided to select the features that have score higher than 1. Based on the result, we filtered the data and obtained features for prediction which are "mag","gap","rms","horizontalError","nst","dmin","depth","magNst" and the labels.
+
         """
     )
 
