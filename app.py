@@ -74,7 +74,7 @@ def home():
 
     st.write(
         """
-        We normalize the attributes to make sure the 
+        We normalize the attributes to make sure the values in same scale which is from 0 to 1.
         """
     )
 
@@ -109,7 +109,9 @@ def home():
 
     st.write(
         """
-        bla bla bla
+        We apply Elbow method to find optimal number of clusters (K). Figure above visualises the sum of squared distances (SSD) for different numbers of clusters in the K-means clustering algorithm.  
+        Based on the figure, we can observe that as the number of clusters increases, the SSD decreases because more clusters allow for a better fit to the data. Therefore, we can observe that the plot shows an “elbow” or significant bend. 
+        In this case, k = 2 is the optimal number of clusters. 
         """
     )
 
@@ -126,7 +128,8 @@ def home():
 
     st.write(
         """
-        bla bla bla
+        By using the scikit-learn package, we implemented K-Means clustering with the number of clusters k = 2, and random state = 1.
+        Based on the figure, we can observe that the dataset has been well-clustered since there is a low amount of overlapping plots.
         """
     )
 
@@ -136,7 +139,11 @@ def home():
     st.image(image6, caption="Silhouette Score")
     st.write(
         """
-        bla bla bla
+        To evaluate our clustering performance, we have calculated the silhouette score. It gives an indication of how cohesive an object is inside its own cluster and how separated it is from other clusters. The range of the silhouette coefficient is -1 to 1. A coefficient close to +1 indicates that the sample is well-clustered and separated from neighbouring clusters, indicating that the clustering arrangement is appropriate. If the coefficient is close to zero, the sample is at the decision border between two nearby clusters. A value that's close to -1 indicates that there's a chance the sample was placed in an incorrect cluster. 
+
+        We obtained a silhouette score of 0.7136271938207533 which indicates that clustering achieved satisfying performance and the selected features are clustered well.
+        The average value silhouette score observed in the figure is between 0.7 and 0.8 silhouette coefficient values which suggests that the clusters are reasonably well-separated.
+
         """
     )
 
