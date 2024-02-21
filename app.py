@@ -153,8 +153,33 @@ def home():
 
     # ----- Data Post-processing----- #
     st.header("Data Post-processing")
+
+    #Sampling
     st.subheader("Sampling")
+    image8 = Image.open("images/sampling1.png").resize((600, 300))  # Adjust size as needed
+    image9 = Image.open("images/sampling2.png").resize((600, 300))  # Adjust size as needed
+
+    # Display the images side by side
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image(image8, caption="Before")
+
+    with col2:
+        st.image(image9, caption="After")
+
+    st.write(
+        """
+        bla bla bla
+        """
+    )
+
+    #Chi-Squared Test
     st.subheader("Chi-Squared Test")
+    image10 = Image.open("images/kbest.png").resize((1000, 700))  # Adjust size as needed
+    st.image(image10, caption="Feature Selection using Chi-Squared Test")
+
+def pred():
+    st.header("Prediction Models")
 
 def about():
     dp_image = Image.open("image/removebgWaiee.png")
@@ -179,13 +204,17 @@ def about():
 with st.sidebar:
     selected = st.selectbox(
         "Menu",
-        options=["Home", "Data Analysis", "Model Comparison", "About"],
+        options=["Clustering","Prediction Models","About"],
         index=0,
     )
 
-if selected == "Home":
-    st.title("Earthquake Analysis: K-Means Clustering :bar_chart:")
+if selected == "Clustering":
+    st.title("Earthquake Prediction & Analysis: Clustering :bar_chart:")
     home()
+
+elif selected == "Prediction Models":
+    st.title("Earthquake Prediction & Analysis: Prediction Models :bar_chart:")
+    pred()
 
 elif selected == "About":
     about()
