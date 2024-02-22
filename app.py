@@ -207,13 +207,13 @@ def pred():
     # Display the images side by side
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.image(image11, caption="Before")
+        st.image(image11, caption="No Tuning")
 
     with col2:
-        st.image(image12, caption="After")
+        st.image(image12, caption="Randomized Search")
 
     with col3:
-        st.image(image13, caption="Third Image")
+        st.image(image13, caption="GridBag Search")
 
     st.write(
         """
