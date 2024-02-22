@@ -243,6 +243,15 @@ def pred():
         bla bla bla
         """
     )
+    
+    st.subheader("Random Forest")
+    image17 = Image.open("images/comparison_dtnrt.png").resize((1000, 700))  # Adjust size as needed
+    st.image(image17, caption="Comparison between Decision Tree and Random Forest")
+    st.write(
+        """
+        bla bla bla
+        """
+    )
 
 def about():
     dp_image = Image.open("images/removebgWaiee.png")
