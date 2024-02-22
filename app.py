@@ -254,6 +254,16 @@ def pred():
     )
 
 def about():
+    st.write(
+        """
+        This project is driven by the need to learn more about the complex patterns and features of seismic occurrences all over the world. Understanding the spatial and temporal patterns of earthquakes, which are continuously affected by a variety of geological causes, is essential for improving risk assessment, disaster preparedness, and scientific understanding. 
+
+        Based on the earthquake data recorded in 2023, this project aims to identify areas with a high risk of earthquake occurrences and to develop predictive models for forecasting potential characteristics, such as the magnitude of seismic activity within these areas. By employing clustering techniques, specifically K-means clustering, and utilising conventional machine learning algorithms such as Random Forest and Decision Tree models, we aim to achieve a comprehensive understanding of seismic patterns across the globe. The findings may assist in planning and disaster preparation, allowing policymakers to take preventative measures and minimise the impacts of earthquakes.
+        """
+    )
+
+
+def aboutus():
     dp_image = Image.open("images/removebgWaiee.png")
     image_column, right_column = st.columns((1,2))
     with image_column:
@@ -289,5 +299,9 @@ elif selected == "Prediction Models":
     pred()
 
 elif selected == "About":
-    st.title("About :computer:")
+    st.title("About")
     about()
+
+elif selected == "About":
+    st.title("About :computer:")
+    aboutus()
