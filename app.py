@@ -217,7 +217,7 @@ def pred():
 
     st.write(
         """
-        bla bla bla
+        There is a difference in the scatterplots observed for no tuning, randomized search and gridsearch cv of the decision tree, where in the training set align very closely to the line but the datapoints in the testing set deviate from the line. In randomized search, and grid search, there are significant deviations between the testing set and the training set,  with randomized search showing a tighter pattern in the testing and training set
         """
     )
 
@@ -240,7 +240,7 @@ def pred():
 
     st.write(
         """
-        bla bla bla
+        The scatterplots show closely similar patterns to one another, where the points in the training set and the testing set for randomized search lie closer to the line.
         """
     )
     
@@ -249,7 +249,7 @@ def pred():
     st.image(image17, caption="Comparison between Decision Tree and Random Forest")
     st.write(
         """
-        bla bla bla
+        When comparing between decision tree and random forest, the datapoints of the predicted values are observed to be tighter and lie closer to the line in random forest than in decision tree, signifying an increase in the r^2 score        
         """
     )
 
