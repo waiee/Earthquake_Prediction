@@ -197,6 +197,8 @@ def home():
 
 def pred():
     st.header("Prediction Models")
+    st.subheader("Decision Tree")
+    st.subheader("Random Forest")
 
 def about():
     dp_image = Image.open("images/removebgWaiee.png")
