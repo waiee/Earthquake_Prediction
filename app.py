@@ -109,8 +109,7 @@ def home():
 
     st.write(
         """
-        We apply Elbow method to find optimal number of clusters (K). Figure above visualises the sum of squared distances (SSD) for different numbers of clusters in the K-means clustering algorithm.  
-        Based on the figure, we can observe that as the number of clusters increases, the SSD decreases because more clusters allow for a better fit to the data. Therefore, we can observe that the plot shows an “elbow” or significant bend. 
+        We apply Elbow method to find optimal number of clusters (K). Figure above visualises the sum of squared distances (SSD) for different numbers of clusters in the K-means clustering algorithm. Based on the figure, we can observe that as the number of clusters increases, the SSD decreases because more clusters allow for a better fit to the data. Therefore, we can observe that the plot shows an “elbow” or significant bend. 
         In this case, k = 2 is the optimal number of clusters. 
         """
     )
