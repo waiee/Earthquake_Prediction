@@ -245,7 +245,7 @@ def pred():
     )
     
     st.subheader("Random Forest")
-    image17 = Image.open("images/comparison_dtnrt.png").resize((1000, 700))  # Adjust size as needed
+    image17 = Image.open("images/comparison_dtnrt.png").resize((1200, 600))  # Adjust size as needed
     st.image(image17, caption="Comparison between Decision Tree and Random Forest")
     st.write(
         """
