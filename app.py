@@ -222,6 +222,27 @@ def pred():
     )
 
     st.subheader("Random Forest")
+    # Load and resize images
+    image14 = Image.open("images/rf1.png").resize((400, 300))  # Adjust size as needed
+    image15 = Image.open("images/rf2.png").resize((400, 300))  # Adjust size as needed
+    image16 = Image.open("images/rf3.png").resize((400, 300))  # Adjust size as needed
+
+    # Display the images side by side
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.image(image14, caption="No Tuning")
+
+    with col2:
+        st.image(image15, caption="Randomized Search")
+
+    with col3:
+        st.image(image16, caption="GridBag Search")
+
+    st.write(
+        """
+        bla bla bla
+        """
+    )
 
 def about():
     dp_image = Image.open("images/removebgWaiee.png")
