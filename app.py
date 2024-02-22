@@ -200,9 +200,9 @@ def pred():
     st.subheader("Decision Tree")
 
     # Load and resize images
-    image11 = Image.open("images/dt1.png").resize((400, 200))  # Adjust size as needed
-    image12 = Image.open("images/dt2.png").resize((400, 200))  # Adjust size as needed
-    image13 = Image.open("images/dt3.png").resize((400, 200))  # Adjust size as needed
+    image11 = Image.open("images/dt1.png").resize((400, 300))  # Adjust size as needed
+    image12 = Image.open("images/dt2.png").resize((400, 300))  # Adjust size as needed
+    image13 = Image.open("images/dt3.png").resize((400, 300))  # Adjust size as needed
 
     # Display the images side by side
     col1, col2, col3 = st.columns(3)
